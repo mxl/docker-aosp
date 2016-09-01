@@ -37,8 +37,8 @@ function aosp_create_dir_if_needed {
 aosp_create_dir_if_needed $AOSP_VOL_AOSP
 aosp_create_dir_if_needed $AOSP_VOL_CCACHE
 
-# Set uid and gid to match host current user
-AOSP_HOST_ID_ARGS="-e USER_ID=$(id -u) -e GROUP_ID=$(id -g)"
+# Set uid to match host current user
+AOSP_HOST_ID_ARGS="-e USER_ID=$(id -u)"
 
 if [ -n "$SSH_AUTH_SOCK" ]; then
     SSH_AUTH_ARGS="-v $SSH_AUTH_SOCK:/tmp/ssh_auth -e SSH_AUTH_SOCK=/tmp/ssh_auth"
